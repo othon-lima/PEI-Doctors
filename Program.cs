@@ -42,11 +42,17 @@ class Program
             // Load formatted baseline (already normalized)
             var baselineFormatted = await File.ReadAllTextAsync(baselineFile, Encoding.UTF8);
             // Print per-doctor diffs
-            PrintRecordDiffs(baselineFormatted, currentFormatted);
+            bool changesFound = PrintRecordDiffs(baselineFormatted, currentFormatted);
+            if (!changesFound)
+            {
+                Console.WriteLine("No changes detected. Data is up to date.");
+            }
         }
 
         // Update baseline with today's normalized JSON
         File.WriteAllText(baselineFile, currentFormatted, Encoding.UTF8);
+
+        Console.WriteLine("Process completed successfully.");
     }
 
     static async Task<string> FetchDataAsync(string regionSid, string regionLabel)
@@ -85,9 +91,11 @@ class Program
 
     /// <summary>
     /// Diff each doctor's record separately, grouping by the "rg" property.
+    /// Returns true if any changes were found, false otherwise.
     /// </summary>
-    static void PrintRecordDiffs(string oldJson, string newJson)
+    static bool PrintRecordDiffs(string oldJson, string newJson)
     {
+        bool changesFound = false;
         var options = new JsonSerializerOptions { WriteIndented = true };
         using var oldDoc = JsonDocument.Parse(oldJson);
         using var newDoc = JsonDocument.Parse(newJson);
@@ -121,12 +129,14 @@ class Program
 
             if (!existsOld)
             {
+                changesFound = true;
                 Console.WriteLine($"+++ Added record for {id}");
                 Console.WriteLine(newMap[id]);
                 continue;
             }
             if (!existsNew)
             {
+                changesFound = true;
                 Console.WriteLine($"--- Removed record for {id}");
                 Console.WriteLine(oldMap[id]);
                 continue;
@@ -137,6 +147,7 @@ class Program
             if (oldText == newText)
                 continue;
 
+            changesFound = true;
             Console.WriteLine($"=== Changes for {id}");
             var diff = diffBuilder.BuildDiffModel(oldText, newText);
             foreach (var line in diff.Lines)
@@ -152,5 +163,6 @@ class Program
                 }
             }
         }
+        return changesFound;
     }
 }
