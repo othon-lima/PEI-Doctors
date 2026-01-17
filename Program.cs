@@ -23,7 +23,7 @@ class Program
 
     static async Task Main(string[] args)
     {
-        string dataDir = Path.Combine(AppContext.BaseDirectory, "data");
+        string dataDir = Path.Combine(Directory.GetCurrentDirectory(), "data");
         Directory.CreateDirectory(dataDir);
 
         string todayKey = DateTime.Now.ToString("yyyyMMdd");
