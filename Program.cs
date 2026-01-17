@@ -1,8 +1,10 @@
-﻿// Requires .NET 6 or later
+// Requires .NET 6 or later
 // Install DiffPlex via NuGet: `dotnet add package DiffPlex`
 
 using System.Text;
 using System.Text.Json;
+using System.Collections.Generic;
+using System.Linq;
 using DiffPlex;
 using DiffPlex.DiffBuilder;
 using DiffPlex.DiffBuilder.Model;
@@ -11,15 +13,6 @@ class Program
 {
     private static readonly string Url = "https://cpspei.alinityapp.com/Client/PublicDirectory/Registrants";
     private const string QuerySID = "1000608";
-    private static readonly string QueryParametersJson =
-        "{\"Parameter\":[{" +
-        "\"ID\":\"TextOptionA\",\"Value\":\"\",\"ValueLabel\":\"[not entered]\"}," +
-        "{\"ID\":\"RegionSID\",\"Value\":\"1000004\",\"ValueLabel\":\"Queens\"}," +
-        "{\"ID\":\"IsCheckedOptionA\",\"Value\":\"\",\"ValueLabel\":\"[not entered]\"}," +
-        "{\"ID\":\"TextOptionB\",\"Value\":\"\",\"ValueLabel\":\"[not entered]\"}," +
-        "{\"ID\":\"CitySID\",\"Value\":\"\",\"ValueLabel\":\"[not entered]\"}," +
-        "{\"ID\":\"TextOptionC\",\"Value\":\"\",\"ValueLabel\":\"[not entered]\"}," +
-        "{\"ID\":\"SpecializationSID\",\"Value\":\"\",\"ValueLabel\":\"[not entered]\"}]}";
 
     static async Task Main(string[] args)
     {
@@ -30,10 +23,13 @@ class Program
         string todayFile = Path.Combine(dataDir, $"{todayKey}.json");
         string baselineFile = Path.Combine(dataDir, "baseline.json");
 
-        // Fetch raw JSON
-        var currentRaw = await FetchDataAsync();
+        // Fetch all data in a single call
+        Console.WriteLine("Fetching data for all regions...");
+        var rawJson = await FetchDataAsync("", "[not entered]");
+        
         // Normalize formatting for consistent diffs
-        var currentFormatted = NormalizeJson(currentRaw);
+        var currentFormatted = NormalizeJson(rawJson);
+
         // Save today's snapshot
         File.WriteAllText(todayFile, currentFormatted, Encoding.UTF8);
 
@@ -53,12 +49,21 @@ class Program
         File.WriteAllText(baselineFile, currentFormatted, Encoding.UTF8);
     }
 
-    static async Task<string> FetchDataAsync()
+    static async Task<string> FetchDataAsync(string regionSid, string regionLabel)
     {
         using var client = new HttpClient();
+        string queryParameters = "{\"Parameter\":[{" +
+            "\"ID\":\"TextOptionA\",\"Value\":\"\",\"ValueLabel\":\"[not entered]\"}," +
+            "{\"ID\":\"RegionSID\",\"Value\":\"" + regionSid + "\",\"ValueLabel\":\"" + regionLabel + "\"}," +
+            "{\"ID\":\"IsCheckedOptionA\",\"Value\":\"\",\"ValueLabel\":\"[not entered]\"}," +
+            "{\"ID\":\"TextOptionB\",\"Value\":\"\",\"ValueLabel\":\"[not entered]\"}," +
+            "{\"ID\":\"CitySID\",\"Value\":\"\",\"ValueLabel\":\"[not entered]\"}," +
+            "{\"ID\":\"TextOptionC\",\"Value\":\"\",\"ValueLabel\":\"[not entered]\"}," +
+            "{\"ID\":\"SpecializationSID\",\"Value\":\"\",\"ValueLabel\":\"[not entered]\"}]}";
+
         var values = new Dictionary<string, string>
         {
-            ["queryParameters"] = QueryParametersJson,
+            ["queryParameters"] = queryParameters,
             ["querySID"] = QuerySID
         };
         using var content = new FormUrlEncodedContent(values);
