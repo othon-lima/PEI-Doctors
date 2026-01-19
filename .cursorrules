@@ -1,0 +1,25 @@
+# PEI-Doctors Project Rules
+
+## Tech Stack
+- .NET 8 Console Application
+- Libraries: DiffPlex, System.Text.Json
+
+## Coding Standards
+- Use modern C# features (file-scoped namespaces, primary constructors where applicable).
+- Always use `System.Text.Json` over `Newtonsoft.Json`.
+- Ensure all JSON output is normalized using the project's `NormalizeJson` pattern to maintain diff consistency.
+- Prefer `async`/`await` for I/O operations.
+
+## Data Handling
+- The `data/` folder contains historical snapshots in JSON format.
+- `baseline.json` is the source of truth for the most recent state and should be updated after successful scrapes.
+- Records are identified by the `rg` (Registrant GUID) property.
+
+## Maintenance of this file
+- **CRITICAL:** Whenever significant architectural changes, new dependencies, or new coding patterns are introduced to the codebase, this `.cursorrules` file MUST be updated to reflect the new state.
+- Keep the project description and tech stack accurate.
+- If a new service or data structure becomes central to the project, document its purpose here.
+
+## Context
+- This tool monitors the College of Physicians and Surgeons of PEI public directory.
+- Avoid making unnecessary network calls; prefer using existing JSON files for testing logic.
