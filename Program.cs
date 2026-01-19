@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using DiffPlex;
 using DiffPlex.DiffBuilder;
 using DiffPlex.DiffBuilder.Model;
@@ -16,7 +17,7 @@ class Program
 
     static async Task Main(string[] args)
     {
-        string dataDir = Path.Combine(Directory.GetCurrentDirectory(), "data");
+        string dataDir = Path.Combine(GetProjectRoot(), "data");
         Directory.CreateDirectory(dataDir);
 
         string todayKey = DateTime.Now.ToString("yyyyMMdd");
@@ -164,5 +165,10 @@ class Program
             }
         }
         return changesFound;
+    }
+
+    static string GetProjectRoot([CallerFilePath] string callerPath = "")
+    {
+        return Path.GetDirectoryName(callerPath) ?? Directory.GetCurrentDirectory();
     }
 }
