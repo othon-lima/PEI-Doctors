@@ -1,4 +1,5 @@
 using Xunit;
+using PEI_Doctors.Services;
 
 namespace PEI_Doctors.Tests;
 
@@ -11,7 +12,7 @@ public class NormalizeJsonTests
         string compactJson = "{\"name\":\"test\",\"value\":123}";
         
         // Act
-        string result = Program.NormalizeJson(compactJson);
+        string result = DoctorMonitorService.NormalizeJson(compactJson);
         
         // Assert
         // The default normalization in Program.NormalizeJson uses WriteIndented = true
@@ -27,7 +28,7 @@ public class NormalizeJsonTests
         string rawJson = "{\"a\":1}";
 
         // Act
-        string result = Program.NormalizeJson(rawJson);
+        string result = DoctorMonitorService.NormalizeJson(rawJson);
 
         // Assert
         Assert.Contains("\"a\": 1", result);

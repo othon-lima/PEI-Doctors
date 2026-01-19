@@ -77,7 +77,7 @@ public class DoctorMonitorService
         return await response.Content.ReadAsStringAsync();
     }
 
-    public string NormalizeJson(string rawJson)
+    public static string NormalizeJson(string rawJson)
     {
         using var doc = JsonDocument.Parse(rawJson);
         var options = new JsonSerializerOptions { WriteIndented = true };
