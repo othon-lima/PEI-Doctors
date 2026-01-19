@@ -10,12 +10,12 @@ using DiffPlex;
 using DiffPlex.DiffBuilder;
 using DiffPlex.DiffBuilder.Model;
 
-class Program
+public class Program
 {
     private static readonly string Url = "https://cpspei.alinityapp.com/Client/PublicDirectory/Registrants";
     private const string QuerySID = "1000608";
 
-    static async Task Main(string[] args)
+    public static async Task Main(string[] args)
     {
         string dataDir = Path.Combine(GetProjectRoot(), "data");
         Directory.CreateDirectory(dataDir);
@@ -83,7 +83,7 @@ class Program
     /// <summary>
     /// Parse a JSON string and re-serialize with indentation for consistent diffs.
     /// </summary>
-    static string NormalizeJson(string rawJson)
+    public static string NormalizeJson(string rawJson)
     {
         using var doc = JsonDocument.Parse(rawJson);
         var options = new JsonSerializerOptions { WriteIndented = true };

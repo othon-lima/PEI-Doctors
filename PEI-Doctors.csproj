@@ -11,4 +11,10 @@
     <PackageReference Include="DiffPlex" Version="1.8.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="PEI-Doctors.Tests\**" />
+    <EmbeddedResource Remove="PEI-Doctors.Tests\**" />
+    <None Remove="PEI-Doctors.Tests\**" />
+  </ItemGroup>
+
 </Project>
