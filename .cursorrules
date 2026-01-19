@@ -1,19 +1,28 @@
 # PEI-Doctors Project Rules
 
 ## Tech Stack
-- .NET 8 Console Application
-- Libraries: DiffPlex, System.Text.Json
+- Backend: ASP.NET Core 8 Web API
+- Frontend: Vue 3 + TypeScript + Vite (located in `ClientApp/`)
+- Libraries: DiffPlex, System.Text.Json, Microsoft.AspNetCore.SpaProxy
 
 ## Coding Standards
 - Use modern C# features (file-scoped namespaces, primary constructors where applicable).
 - Always use `System.Text.Json` over `Newtonsoft.Json`.
 - Ensure all JSON output is normalized using the project's `NormalizeJson` pattern to maintain diff consistency.
 - Prefer `async`/`await` for I/O operations.
+- Vue components should use the `<script setup lang="ts">` pattern.
 
 ## Data Handling
 - The `data/` folder contains historical snapshots in JSON format.
 - `baseline.json` is the source of truth for the most recent state and should be updated after successful scrapes.
 - Records are identified by the `rg` (Registrant GUID) property.
+
+## Architecture
+- The project is a Single Page Application (SPA).
+- In development, the ASP.NET Core backend proxies requests to the Vite dev server (port 5173).
+- In production, the backend serves the pre-built static files from `ClientApp/dist`.
+- Business logic for monitoring and scraping is located in `Services/DoctorMonitorService.cs`.
+- API endpoints are located in `Controllers/`.
 
 ## Maintenance of this file
 - **CRITICAL:** Whenever significant architectural changes, new dependencies, or new coding patterns are introduced to the codebase, this `.cursorrules` file MUST be updated to reflect the new state.
@@ -23,3 +32,4 @@
 ## Context
 - This tool monitors the College of Physicians and Surgeons of PEI public directory.
 - Avoid making unnecessary network calls; prefer using existing JSON files for testing logic.
+- Launch via Visual Studio using the "https" or "http" profiles to start both the backend and frontend.

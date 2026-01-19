@@ -63,3 +63,9 @@ project.assets.json
 # OS-specific files
 .DS_Store
 Thumbs.db
+
+# Node / Vue / Frontend
+node_modules/
+ClientApp/dist/
+ClientApp/.vite/
+*.local
