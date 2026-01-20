@@ -37,10 +37,13 @@ app.MapControllers();
 // Configure SPA
 if (app.Environment.IsDevelopment())
 {
-    app.UseSpa(spa =>
+    app.MapWhen(context => !context.Request.Path.Value!.StartsWith("/api"), appBuilder =>
     {
-        spa.Options.SourcePath = "ClientApp";
-        spa.UseProxyToSpaDevelopmentServer("http://localhost:5173");
+        appBuilder.UseSpa(spa =>
+        {
+            spa.Options.SourcePath = "ClientApp";
+            spa.UseProxyToSpaDevelopmentServer("http://localhost:5173");
+        });
     });
 }
 else

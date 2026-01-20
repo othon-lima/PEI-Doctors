@@ -55,7 +55,7 @@ public class DoctorMonitorService
 
     public async Task<string> FetchDataAsync(string regionSid, string regionLabel)
     {
-        using var client = new HttpClient();
+        using var client = new HttpClient { Timeout = TimeSpan.FromSeconds(60) };
         string queryParameters = "{\"Parameter\":[{" +
             "\"ID\":\"TextOptionA\",\"Value\":\"\",\"ValueLabel\":\"[not entered]\"}," +
             "{\"ID\":\"RegionSID\",\"Value\":\"" + regionSid + "\",\"ValueLabel\":\"" + regionLabel + "\"}," +

@@ -17,8 +17,15 @@ public class DoctorsController : ControllerBase
     [HttpPost("scrape")]
     public async Task<IActionResult> Scrape()
     {
-        await _doctorService.RunScrapeAsync();
-        return Ok(new { message = "Scrape completed successfully" });
+        try
+        {
+            await _doctorService.RunScrapeAsync();
+            return Ok(new { message = "Scrape completed successfully" });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Scrape failed", error = ex.Message });
+        }
     }
 
     [HttpGet("baseline")]
