@@ -157,6 +157,7 @@ public class DoctorMonitorService
 
     public string GetProjectRoot([CallerFilePath] string callerPath = "")
     {
-        return Path.GetDirectoryName(callerPath) ?? Directory.GetCurrentDirectory();
+        string serviceDir = Path.GetDirectoryName(callerPath) ?? Directory.GetCurrentDirectory();
+        return Path.GetDirectoryName(serviceDir) ?? serviceDir;
     }
 }
