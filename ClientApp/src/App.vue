@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const message = ref('Hello World from Vue 3!')
+const message = ref('PEI Doctors Monitor')
 const status = ref('')
 
 async function triggerScrape() {
@@ -21,7 +21,6 @@ async function triggerScrape() {
 <template>
   <div class="container">
     <h1>{{ message }}</h1>
-    <p>PEI Doctors Monitor Frontend</p>
     
     <div class="actions">
       <button @click="triggerScrape">Trigger New Scrape</button>
