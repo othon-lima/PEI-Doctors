@@ -12,8 +12,9 @@ public class DoctorMonitorService
     private static readonly string Url = "https://cpspei.alinityapp.com/Client/PublicDirectory/Registrants";
     private const string QuerySID = "1000608";
 
-    public async Task RunScrapeAsync()
+    public async Task<string> RunScrapeAsync()
     {
+        var report = new StringBuilder();
         string dataDir = Path.Combine(GetProjectRoot(), "data");
         Directory.CreateDirectory(dataDir);
 
@@ -22,7 +23,7 @@ public class DoctorMonitorService
         string baselineFile = Path.Combine(dataDir, "baseline.json");
 
         // Fetch all data in a single call
-        Console.WriteLine("Fetching data for all regions...");
+        report.AppendLine("Fetching data for all regions...");
         var rawJson = await FetchDataAsync("", "[not entered]");
         
         // Normalize formatting for consistent diffs
@@ -33,24 +34,29 @@ public class DoctorMonitorService
 
         if (!File.Exists(baselineFile))
         {
-            Console.WriteLine("No baseline found. Saving today as baseline.");
+            report.AppendLine("No baseline found. Saving today as baseline.");
         }
         else
         {
             // Load formatted baseline (already normalized)
             var baselineFormatted = await File.ReadAllTextAsync(baselineFile, Encoding.UTF8);
-            // Print per-doctor diffs
-            bool changesFound = PrintRecordDiffs(baselineFormatted, currentFormatted);
+            // Get per-doctor diffs
+            var (changesFound, diffReport) = GetRecordDiffs(baselineFormatted, currentFormatted);
             if (!changesFound)
             {
-                Console.WriteLine("No changes detected. Data is up to date.");
+                report.AppendLine("No changes detected. Data is up to date.");
+            }
+            else
+            {
+                report.Append(diffReport);
             }
         }
 
         // Update baseline with today's normalized JSON
         await File.WriteAllTextAsync(baselineFile, currentFormatted, Encoding.UTF8);
 
-        Console.WriteLine("Process completed successfully.");
+        report.AppendLine("Process completed successfully.");
+        return report.ToString();
     }
 
     public async Task<string> FetchDataAsync(string regionSid, string regionLabel)
@@ -84,8 +90,9 @@ public class DoctorMonitorService
         return JsonSerializer.Serialize(doc.RootElement, options);
     }
 
-    public bool PrintRecordDiffs(string oldJson, string newJson)
+    public (bool changesFound, string report) GetRecordDiffs(string oldJson, string newJson)
     {
+        var report = new StringBuilder();
         bool changesFound = false;
         var options = new JsonSerializerOptions { WriteIndented = true };
         using var oldDoc = JsonDocument.Parse(oldJson);
@@ -121,15 +128,15 @@ public class DoctorMonitorService
             if (!existsOld)
             {
                 changesFound = true;
-                Console.WriteLine($"+++ Added record for {id}");
-                Console.WriteLine(newMap[id]);
+                report.AppendLine($"+++ Added record for {id}");
+                report.AppendLine(newMap[id]);
                 continue;
             }
             if (!existsNew)
             {
                 changesFound = true;
-                Console.WriteLine($"--- Removed record for {id}");
-                Console.WriteLine(oldMap[id]);
+                report.AppendLine($"--- Removed record for {id}");
+                report.AppendLine(oldMap[id]);
                 continue;
             }
 
@@ -139,20 +146,20 @@ public class DoctorMonitorService
                 continue;
 
             changesFound = true;
-            Console.WriteLine($"=== Changes for {id}");
+            report.AppendLine($"=== Changes for {id}");
             var diff = diffBuilder.BuildDiffModel(oldText, newText);
             foreach (var line in diff.Lines)
             {
                 switch (line.Type)
                 {
                     case ChangeType.Deleted:
-                        Console.WriteLine($"- {line.Type} {line.Text}"); break;
+                        report.AppendLine($"- {line.Type} {line.Text}"); break;
                     case ChangeType.Inserted:
-                        Console.WriteLine($"+ {line.Type} {line.Text}"); break;
+                        report.AppendLine($"+ {line.Type} {line.Text}"); break;
                 }
             }
         }
-        return changesFound;
+        return (changesFound, report.ToString());
     }
 
     public string GetProjectRoot([CallerFilePath] string callerPath = "")

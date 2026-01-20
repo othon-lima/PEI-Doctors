@@ -19,8 +19,8 @@ public class DoctorsController : ControllerBase
     {
         try
         {
-            await _doctorService.RunScrapeAsync();
-            return Ok(new { message = "Scrape completed successfully" });
+            var report = await _doctorService.RunScrapeAsync();
+            return Ok(new { message = "Scrape completed successfully", report });
         }
         catch (Exception ex)
         {
