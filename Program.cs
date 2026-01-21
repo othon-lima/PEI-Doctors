@@ -12,7 +12,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("DevelopmentPolicy", policy =>
     {
-        policy.WithOrigins("http://localhost:5173")
+        policy.WithOrigins("http://127.0.0.1:5173")
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
@@ -42,7 +42,7 @@ if (app.Environment.IsDevelopment())
         appBuilder.UseSpa(spa =>
         {
             spa.Options.SourcePath = "ClientApp";
-            spa.UseProxyToSpaDevelopmentServer("http://localhost:5173");
+            spa.UseProxyToSpaDevelopmentServer("http://127.0.0.1:5173");
         });
     });
 }
@@ -54,7 +54,8 @@ else
         spa.Options.DefaultPageStaticFileOptions = new StaticFileOptions
         {
             FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(
-                Path.Combine(builder.Environment.ContentRootPath, "ClientApp/dist"))
+                Path.Combine(builder.Environment.ContentRootPath, "ClientApp/dist")),
+            RequestPath = ""
         };
     });
 }

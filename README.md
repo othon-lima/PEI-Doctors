@@ -52,7 +52,7 @@ The easiest way to run the project is using Visual Studio or VS Code with the pr
    dotnet run
    ```
 
-The backend will be available at `https://localhost:7196` (or similar) and will proxy frontend requests to `http://localhost:5173`.
+The backend will be available at `https://localhost:7196` (or similar) and will proxy frontend requests to `http://127.0.0.1:5173`.
 
 ## API Endpoints
 
