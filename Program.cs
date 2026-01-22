@@ -7,6 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddSingleton<DoctorMonitorService>();
 
+// Add Vite dev server service to automatically start the dev server
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddHostedService<PEI_Doctors.Services.ViteDevServerService>();
+}
+
 // Configure CORS for development
 builder.Services.AddCors(options =>
 {
@@ -42,7 +48,10 @@ if (app.Environment.IsDevelopment())
         appBuilder.UseSpa(spa =>
         {
             spa.Options.SourcePath = "ClientApp";
-            spa.UseProxyToSpaDevelopmentServer("http://127.0.0.1:5173");
+            // Get the dev server URL from environment variable (set by SPA proxy) or use default
+            var devServerUrl = builder.Configuration["ASPNETCORE_SpaProxyServerUrl"] ?? "http://127.0.0.1:5173";
+            // The SPA proxy package will automatically start the dev server
+            spa.UseProxyToSpaDevelopmentServer(devServerUrl);
         });
     });
 }
