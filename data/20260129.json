@@ -12,7 +12,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "James Paton Memorial Hospital\u003Cbr/\u003E125 Trans Canada Highway\u003C/br\u003E\u003Cbr/\u003EGander, Newfoundland and Labrador, Canada A1V 1P7\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 709-256-2500"
+      "oa": ""
     },
     {
       "rg": "26468bde-b098-ee11-9929-000d3ae97b99",
@@ -324,19 +324,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "CHU Dr-Georges-L. Dumont\u003Cbr/\u003E330 Avenue de l\u0027Universite\u003C/br\u003E\u003Cbr/\u003EMoncton, New Brunswick, Canada E1C 2Z3\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-862-4113"
-    },
-    {
-      "rg": "6fb4a14d-99ea-f011-994d-000d3ae97b99",
-      "rl": "Albeshr, Mohammed (PG9363)",
-      "prl": "Medical Education Register - Post Grad. Medical Trainee",
-      "irc": false,
-      "sid": 1037031,
-      "c": "[]",
-      "atlr": "hidden",
-      "cv": "hidden",
-      "pdcv": "hidden",
-      "oa": "QEH\u003Cbr/\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 8T5"
+      "oa": ""
     },
     {
       "rg": "dc4a8bde-b098-ee11-9929-000d3ae97b99",
@@ -510,7 +498,7 @@
       "rg": "b25017cd-096f-f011-9944-000d3ae97b99",
       "rl": "Alvarez, George (9279)",
       "prl": "Specific Disciplines Register - General\u003Cbr/\u003ECritical Care Medicine,Internal Medicine",
-      "irc": true,
+      "irc": false,
       "sid": 1036646,
       "c": "[]",
       "atlr": "hidden",
@@ -529,18 +517,6 @@
       "cv": "hidden",
       "pdcv": "hidden",
       "oa": "QEH\u003Cbr/\u003EPO Box 6600\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 8T5\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-368-5411"
-    },
-    {
-      "rg": "bf9ede0d-37f1-f011-994f-000d3ae97b99",
-      "rl": "Amar, Maxime (T9410)",
-      "prl": "Family Medicine Register - Provisional Registration - 10 Weeks\u003Cbr/\u003ECertificant of the College of Famil",
-      "irc": false,
-      "sid": 1037374,
-      "c": "[]",
-      "atlr": "hidden",
-      "cv": "hidden",
-      "pdcv": "hidden",
-      "oa": "Summerside Medical Center\u003Cbr/\u003E475 Granville Street\u003C/br\u003E\u003Cbr/\u003ESummerside, Prince Edward Island, Canada C1N 3C3"
     },
     {
       "rg": "5359c8d7-bff7-f011-994f-000d3ae97b99",
@@ -589,18 +565,6 @@
       "cv": "hidden",
       "pdcv": "hidden",
       "oa": "Notre Dame Bay Memorial Health Centre\u003Cbr/\u003E4-11 Hospital Lane\u003C/br\u003E\u003Cbr/\u003ETwillingate, Newfoundland and Labrador, Canada A0G 4M0"
-    },
-    {
-      "rg": "e992de14-4ef5-f011-994f-000d3ae97b99",
-      "rl": "Anthes, Esther L (PG9398)",
-      "prl": "Medical Education Register - Post Grad. Medical Trainee\u003Cbr/\u003EAnesthesiology",
-      "irc": false,
-      "sid": 1037196,
-      "c": "[]",
-      "atlr": "hidden",
-      "cv": "hidden",
-      "pdcv": "hidden",
-      "oa": "315 Herring Cove Rd\u003Cbr/\u003EUnit 102\u003C/br\u003E\u003Cbr/\u003EHalifax, Nova Scotia, Canada B3R 1V5"
     },
     {
       "rg": "ec458bde-b098-ee11-9929-000d3ae97b99",
@@ -726,7 +690,7 @@
       "rg": "38498bde-b098-ee11-9929-000d3ae97b99",
       "rl": "Ashby, David B (T7021)",
       "prl": "Specific Disciplines Register- Provisional\u003Cbr/\u003ESurgical Assist,General Surgery",
-      "irc": true,
+      "irc": false,
       "sid": 1035275,
       "c": "\u003Cul style=\u0022margin-left:12px;margin-bottom:0;\u0022\u003E\u003Cli\u003ERestriction\u003C/li\u003E\u003C/ul\u003E",
       "atlr": "hidden",
@@ -1116,7 +1080,7 @@
       "atlr": "hidden",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "Members Health Inc.\u003Cbr/\u003E475 Granville St.\u003C/br\u003ESuite 305\u003C/br\u003E\u003Cbr/\u003ESummerside, Prince Edward Island, Canada C1N 3C3\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 800-484-0152\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 289-720-2076"
+      "oa": "Members Health Inc.\u003Cbr/\u003E200 Ronson Dr.\u003C/br\u003ESuite 305\u003C/br\u003E\u003Cbr/\u003EEtobicoke, Ontario, Canada M9W 5Z9\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 800-484-0152\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 289-720-2076"
     },
     {
       "rg": "3b498bde-b098-ee11-9929-000d3ae97b99",
@@ -1225,18 +1189,6 @@
       "cv": "hidden",
       "pdcv": "hidden",
       "oa": "Markham Stoufville Hosptial\u003Cbr/\u003E381 Church Street\u003C/br\u003E\u003Cbr/\u003EMarkham, Ontario, Canada L3P 7P3"
-    },
-    {
-      "rg": "fe1089a9-f177-f011-9944-000d3ae97b99",
-      "rl": "Bhatnagar, Akash Kumar (T9405)",
-      "prl": "Specific Disciplines Register- Provisional - 52 Weeks",
-      "irc": false,
-      "sid": 1037295,
-      "c": "[]",
-      "atlr": "hidden",
-      "cv": "hidden",
-      "pdcv": "hidden",
-      "oa": "QEH\u003Cbr/\u003E60 Riverside Drive\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 8T5"
     },
     {
       "rg": "8e3927a7-bbd5-ee11-992d-000d3ae97b99",
@@ -1416,7 +1368,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "CFB Gagetown\u003Cbr/\u003EPO Box 17000\u003C/br\u003EStation Forces\u003C/br\u003E\u003Cbr/\u003EOromocto, New Brunswick, Canada E2V 4J5\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-422-2000 Ext 3365"
+      "oa": ""
     },
     {
       "rg": "5f169752-dd13-f011-993f-000d3ae97b99",
@@ -1683,18 +1635,6 @@
       "oa": "2686 Sextant Lane\u003Cbr/\u003E\u003Cbr/\u003EHalifax, Nova Scotia, Canada B3H 2Y9\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-721-8700"
     },
     {
-      "rg": "d6b9449f-c605-f111-994f-000d3ae97b99",
-      "rl": "Brennan, Michael (9413)",
-      "prl": "Specific Disciplines Register - General\u003Cbr/\u003EPlastic Surgery",
-      "irc": false,
-      "sid": 1037448,
-      "c": "[]",
-      "atlr": "",
-      "cv": "hidden",
-      "pdcv": "hidden",
-      "oa": "23 Bay Street\u003Cbr/\u003E\u003Cbr/\u003EAntigonish, Nova Scotia, Canada B2G 2G7\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-863-5555"
-    },
-    {
       "rg": "b5458bde-b098-ee11-9929-000d3ae97b99",
       "rl": "Brna, Paula M (VC7046)",
       "prl": "Provisional Visiting\u003Cbr/\u003EPediatrics,Neurology,Pediatrics",
@@ -1837,6 +1777,18 @@
       "cv": "hidden",
       "pdcv": "hidden",
       "oa": "QEH\u003Cbr/\u003EAnesthesiolgy Dept\u003C/br\u003E60 Riverside Drive\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 8T5"
+    },
+    {
+      "rg": "26498bde-b098-ee11-9929-000d3ae97b99",
+      "rl": "Bullock, Claire H (PG8661)",
+      "prl": "Medical Education Register - Post Grad. Medical Trainee\u003Cbr/\u003EPediatrics",
+      "irc": false,
+      "sid": 1036968,
+      "c": "[]",
+      "atlr": "hidden",
+      "cv": "hidden",
+      "pdcv": "hidden",
+      "oa": "Post Graduate Medical Trainee\u003Cbr/\u003E\u003Cbr/\u003EMedical Education, Prince Edward Island, Canada X0X 0X0"
     },
     {
       "rg": "cd468bde-b098-ee11-9929-000d3ae97b99",
@@ -2328,19 +2280,7 @@
       "atlr": "hidden",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "William Osler Health System\u003Cbr/\u003EDepartment of Radiology\u003C/br\u003E101 Humber College Boulevard\u003C/br\u003E\u003Cbr/\u003EToronto, Ontario, Canada M9V 1R8\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 416-747-3400\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 905-848-7356"
-    },
-    {
-      "rg": "0cbf3314-3901-f111-994f-000d3ae97b99",
-      "rl": "Chang, Allen (9409)",
-      "prl": "Specific Disciplines Register - General\u003Cbr/\u003EInternal Medicine,Geriatric Medicine",
-      "irc": false,
-      "sid": 1037373,
-      "c": "[]",
-      "atlr": "",
-      "cv": "hidden",
-      "pdcv": "hidden",
-      "oa": "5955 Veterans Memorial Buliding\u003Cbr/\u003ESuite 2650 Veterans Memorial Lane\u003C/br\u003E\u003Cbr/\u003EHalifax, Nova Scotia, Canada B3H 2E1\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-473-3888\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 902-473-7133"
+      "oa": "Trillium Health Partners\u003Cbr/\u003EDepartment of Radiology\u003C/br\u003E100 Queensway West\u003C/br\u003E\u003Cbr/\u003EMissisauga, Ontario, Canada L5B 1B8\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 905-848-7100\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 905-848-7356"
     },
     {
       "rg": "a4191ea5-8636-f011-9941-000d3ae97b99",
@@ -2700,7 +2640,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "Dept of Obstetrics \u0026 Gynecology\u003Cbr/\u003ESaint John Regional Hospital\u003C/br\u003E400 University Avenue\u003C/br\u003E\u003Cbr/\u003ESaint John, New Brunswick, Canada E2L 4L2\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-649-2788\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 506-648-6116"
+      "oa": ""
     },
     {
       "rg": "679458b5-af9a-ee11-992a-000d3ae97b99",
@@ -3288,7 +3228,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "Saint John Regional Hospital\u003Cbr/\u003E400 University Avenue\u003C/br\u003E\u003Cbr/\u003ESaint John, New Brunswick, Canada E2L 4L2\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-648-8186"
+      "oa": ""
     },
     {
       "rg": "6e488bde-b098-ee11-9929-000d3ae97b99",
@@ -3405,7 +3345,7 @@
       "irc": false,
       "sid": 1036520,
       "c": "[]",
-      "atlr": "hidden",
+      "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
       "oa": "Polyclinic Professional Centre\u003Cbr/\u003ESuite 207, 199 Grafton St.\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 1L2\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-629-8821\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 833-391-2807"
@@ -3468,7 +3408,7 @@
       "atlr": "hidden",
       "cv": "",
       "pdcv": "hidden",
-      "oa": "14 Paramount Dr.\u003Cbr/\u003E24 Linden Ave.\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1E 0C7\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-628-2020\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 902-566-5392"
+      "oa": ""
     },
     {
       "rg": "05e40de7-e192-ef11-9939-000d3ae97b99",
@@ -3636,7 +3576,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "Saint John Regional Hospital\u003Cbr/\u003EPO Box 2100\u003C/br\u003E\u003Cbr/\u003ESaint John, New Brunswick, Canada E2L 4L2\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-648-6000"
+      "oa": "Saint John\u003Cbr/\u003E\u003Cbr/\u003ESaint John, New Brunswick, Canada E2L 4L2"
     },
     {
       "rg": "dfc48959-98e4-ef11-993d-000d3ae97b99",
@@ -3747,18 +3687,6 @@
       "oa": "100 Arden Street\u003Cbr/\u003ESuite 504\u003C/br\u003E\u003Cbr/\u003EMoncton, New Brunswick, Canada E1C 4B7\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-857-5376"
     },
     {
-      "rg": "b123f8b8-e301-f111-994f-000d3ae97b99",
-      "rl": "El Mouallem, Eva (9411)",
-      "prl": "Specific Disciplines Register - General\u003Cbr/\u003EAnesthesiology",
-      "irc": false,
-      "sid": 1037382,
-      "c": "[]",
-      "atlr": "",
-      "cv": "hidden",
-      "pdcv": "hidden",
-      "oa": "Upper River Valley Hospital\u003Cbr/\u003E11300 Route 130\u003C/br\u003E\u003Cbr/\u003EWaterville, New Brunswick, Canada E7P 0A4\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-375-5900"
-    },
-    {
       "rg": "184b8bde-b098-ee11-9929-000d3ae97b99",
       "rl": "Elaraoud, Ibrahim M (7830)",
       "prl": "Specific Disciplines Register - General\u003Cbr/\u003EOphthalmology,Ophthalmology,Ophthalmology",
@@ -3780,7 +3708,7 @@
       "atlr": "hidden",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "9000 Emerald Dr, Sherwood Park, AB T8H 0P5\u003Cbr/\u003EEast Edmonton Urgent Care Edmonton, AB T5B 0C2 Canada\u003C/br\u003E\u003Cbr/\u003ESherwood Park, Alberta, Canada T8H 0P5\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 780-449-5380\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 780-342-3571"
+      "oa": "7910 112 Ave NW, Edmonton, AB\u003Cbr/\u003EEast Edmonton Urgent Care Edmonton, AB T5B 0C2 Canada\u003C/br\u003E\u003Cbr/\u003EEdmonton, Alberta, Canada T5B 0C2\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 780-342-4747\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 780-470-3826"
     },
     {
       "rg": "c84b8bde-b098-ee11-9929-000d3ae97b99",
@@ -4500,7 +4428,7 @@
       "atlr": "hidden",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "St. Joseph\u0027s Hospital Hamilton\u003Cbr/\u003E50 Charlton Avenue East\u003C/br\u003E\u003Cbr/\u003EHamilon, Ontario, Canada L8N 4A6\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 905-522-1155"
+      "oa": "35 Inchbury Street\u003Cbr/\u003E\u003Cbr/\u003EHamilon, Ontario, Canada L8R 3B4"
     },
     {
       "rg": "5376ad00-43f2-f011-994f-000d3ae97b99",
@@ -4512,7 +4440,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "Dr. Everett Chalmers Hospital\u003Cbr/\u003EPO Box 9000\u003C/br\u003E\u003Cbr/\u003EFredericton, New Brunswick, Canada E3B 5N5\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-442-5400"
+      "oa": ""
     },
     {
       "rg": "bc478bde-b098-ee11-9929-000d3ae97b99",
@@ -4968,19 +4896,19 @@
       "atlr": "hidden",
       "cv": "",
       "pdcv": "hidden",
-      "oa": "407 MacIntyre Lane\u003Cbr/\u003EPO Box 817\u003C/br\u003E\u003Cbr/\u003EMontague, Prince Edward Island, Canada C0A 1R0"
+      "oa": "407 MacIntyre Lane\u003Cbr/\u003EPO Box 817\u003C/br\u003E\u003Cbr/\u003EMontague, Prince Edward Island, Canada C0A 1R0\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-969-8615"
     },
     {
       "rg": "90498bde-b098-ee11-9929-000d3ae97b99",
       "rl": "Hameed, Babar M (7191)",
-      "prl": "Family Medicine Register - General\u003Cbr/\u003EGeneral Practitioner",
+      "prl": "Family Medicine Register - General\u003Cbr/\u003EFamily Medicine",
       "irc": false,
       "sid": 1037181,
       "c": "[]",
-      "atlr": "",
+      "atlr": "hidden",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "127 Brunswick Street\u003Cbr/\u003EUnit 8\u003C/br\u003E\u003Cbr/\u003ESt. George, New Brunswick, Canada E5C 1A8\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-755-3713\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 506-755-6641"
+      "oa": "Mount Herbert Addictions\u003Cbr/\u003EBox 2000\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 7N8\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-569-0508\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 902-368-6229"
     },
     {
       "rg": "2f468bde-b098-ee11-9929-000d3ae97b99",
@@ -5163,18 +5091,6 @@
       "oa": "202 Brownlow Avenue\u003Cbr/\u003EUnit 130B\u003C/br\u003E\u003Cbr/\u003EDartmouth, Nova Scotia, Canada B3B 1T5\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-942-1700"
     },
     {
-      "rg": "4e6efffd-8006-f111-994f-000d3ae97b99",
-      "rl": "Hay, John (9427)",
-      "prl": "Specific Disciplines Register - General\u003Cbr/\u003EInternal Medicine",
-      "irc": false,
-      "sid": 1037485,
-      "c": "[]",
-      "atlr": "",
-      "cv": "hidden",
-      "pdcv": "hidden",
-      "oa": "St. Clare\u0027s Mercy Hospital\u003Cbr/\u003E154 LeMarchant Rd\u003C/br\u003E\u003Cbr/\u003ESt. John\u0027s, Newfoundland and Labrador, Canada A1C 5B8\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 709-777-5000"
-    },
-    {
       "rg": "b3478bde-b098-ee11-9929-000d3ae97b99",
       "rl": "Hay, Kathryn D (T7749)",
       "prl": "Specific Disciplines Register- Provisional - 52 Weeks\u003Cbr/\u003EGeneral Surgery,General Surgery,General Surgery",
@@ -5316,7 +5232,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "QEII HSC - HI Site Dept of Anesthesia\u003Cbr/\u003E1796 Summer Street\u003C/br\u003E\u003Cbr/\u003EHalifax, Nova Scotia, Canada B3H 3A7"
+      "oa": ""
     },
     {
       "rg": "e9468bde-b098-ee11-9929-000d3ae97b99",
@@ -5325,7 +5241,7 @@
       "irc": false,
       "sid": 1034118,
       "c": "[]",
-      "atlr": "",
+      "atlr": "hidden",
       "cv": "hidden",
       "pdcv": "hidden",
       "oa": "QEH\u003Cbr/\u003EPO Box 6600\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 8T5\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-894-2111\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 902-894-0127"
@@ -5605,18 +5521,6 @@
       "cv": "hidden",
       "pdcv": "hidden",
       "oa": "555 Main St.\u003Cbr/\u003EPO Box 99\u003C/br\u003E\u003Cbr/\u003EAlberton, Prince Edward Island, Canada C0B 1B0\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-231-3100\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 902-231-3101"
-    },
-    {
-      "rg": "71488bde-b098-ee11-9929-000d3ae97b99",
-      "rl": "Howatt, Victoria D (PG8213)",
-      "prl": "Medical Education Register - Post Grad. Medical Trainee\u003Cbr/\u003EInternal Medicine",
-      "irc": false,
-      "sid": 1037069,
-      "c": "[]",
-      "atlr": "hidden",
-      "cv": "hidden",
-      "pdcv": "hidden",
-      "oa": "315 Herring Cove Rd\u003Cbr/\u003EUnit 102\u003C/br\u003E\u003Cbr/\u003EHalifax, Nova Scotia, Canada B3R 1V5\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-702-0803"
     },
     {
       "rg": "5cdb7259-132f-ef11-9932-000d3ae97b99",
@@ -6033,7 +5937,7 @@
       "irc": false,
       "sid": 1034676,
       "c": "[]",
-      "atlr": "",
+      "atlr": "hidden",
       "cv": "hidden",
       "pdcv": "hidden",
       "oa": "155 Industrial Crescent\u003Cbr/\u003E\u003Cbr/\u003ESummerside, Prince Edward Island, Canada C1N 5N6\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-724-3422\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 902-724-3424"
@@ -6066,7 +5970,7 @@
       "rg": "c84ea437-e6d9-ef11-993d-000d3ae97b99",
       "rl": "Jomphe, Mich\u00E8le (T9089)",
       "prl": "Family Medicine Register - Provisional Registration - 52 Weeks\u003Cbr/\u003ECCFP - Family Practice Anesthesia",
-      "irc": true,
+      "irc": false,
       "sid": 1034347,
       "c": "[]",
       "atlr": "hidden",
@@ -6169,6 +6073,18 @@
       "cv": "hidden",
       "pdcv": "hidden",
       "oa": "Summerside Medical Centre\u003Cbr/\u003E475 Granville Street\u003C/br\u003E\u003Cbr/\u003ESummerside, Prince Edward Island, Canada C1N 3N9\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-432-8181\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 902-436-9660"
+    },
+    {
+      "rg": "f3e6c22c-7fc8-f011-994c-000d3ae97b99",
+      "rl": "Kan-Hodgson, Michelle R (PG9346)",
+      "prl": "Medical Education Register - Post Grad. Medical Trainee",
+      "irc": false,
+      "sid": 1036976,
+      "c": "[]",
+      "atlr": "hidden",
+      "cv": "hidden",
+      "pdcv": "hidden",
+      "oa": "QEH\u003Cbr/\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 8T5"
     },
     {
       "rg": "96478bde-b098-ee11-9929-000d3ae97b99",
@@ -6420,7 +6336,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "Red Sands Pain Management\u003Cbr/\u003ELL-1 Polyclinic\u003C/br\u003E199 Grafton Street\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 1L2\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-894-2111"
+      "oa": "QEH, Anesthesia Dept\u003Cbr/\u003EPO Box 6600\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 8T5\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-894-2111"
     },
     {
       "rg": "f8369874-676d-f011-9944-000d3ae97b99",
@@ -6732,14 +6648,14 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "Dr. Everett Chalmers Regional Hospital\u003Cbr/\u003E700 Priestman Street\u003C/br\u003E\u003Cbr/\u003EFredericton, New Brunswick, Canada E3B 5N5\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-452-5400"
+      "oa": ""
     },
     {
       "rg": "66a8ed03-5f65-ef11-9935-000d3ae97b99",
       "rl": "Lai, Patrick (T9073)",
-      "prl": "Specific Disciplines Register- Provisional - 10 Weeks\u003Cbr/\u003EDiagnostic Radiology",
+      "prl": "Specific Disciplines Register- Provisional - 52 Weeks\u003Cbr/\u003EDiagnostic Radiology",
       "irc": false,
-      "sid": 1037354,
+      "sid": 1034172,
       "c": "[]",
       "atlr": "hidden",
       "cv": "hidden",
@@ -6816,7 +6732,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "Saint John Regional Hospital\u003Cbr/\u003EPO box 2100\u003C/br\u003E\u003Cbr/\u003ESaint John, New Brunswick, Canada E2L 4L2\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-648-6861"
+      "oa": ""
     },
     {
       "rg": "1cb39b90-76e8-ef11-993d-000d3ae97b99",
@@ -6949,18 +6865,6 @@
       "cv": "hidden",
       "pdcv": "hidden",
       "oa": "QEH Anesthesia Dept\u003Cbr/\u003EPO Box 6600\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 8T5\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-894-2111"
-    },
-    {
-      "rg": "01a06293-1201-f111-994f-000d3ae97b99",
-      "rl": "Lee, Wei Wei (9408)",
-      "prl": "Specific Disciplines Register - General\u003Cbr/\u003EOphthalmology",
-      "irc": false,
-      "sid": 1037360,
-      "c": "[]",
-      "atlr": "",
-      "cv": "hidden",
-      "pdcv": "hidden",
-      "oa": "924 Prospect Street\u003Cbr/\u003E\u003Cbr/\u003EFredericton, New Brunswick, Canada E3B 2T8\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-206-3937"
     },
     {
       "rg": "49478bde-b098-ee11-9929-000d3ae97b99",
@@ -7140,7 +7044,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "l\u0027H\u00F4pital r\u00E9gional d\u0027Edmundston\u003Cbr/\u003E275 Boulevard Hebert\u003C/br\u003E\u003Cbr/\u003EEdmundston, New Brunswick, Canada E3V 4E4\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-739-2200"
+      "oa": ""
     },
     {
       "rg": "0c498bde-b098-ee11-9929-000d3ae97b99",
@@ -7381,18 +7285,6 @@
       "cv": "hidden",
       "pdcv": "hidden",
       "oa": "Summerside Medical Centre\u003Cbr/\u003E475 Granville St North\u003C/br\u003E\u003Cbr/\u003ESummerside, Prince Edward Island, Canada C1N 3N9\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-432-8181\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 833-536-1818"
-    },
-    {
-      "rg": "a5f971ed-69ea-f011-994d-000d3ae97b99",
-      "rl": "MacDonald, Sonja (PG9362)",
-      "prl": "Medical Education Register - Post Grad. Medical Trainee",
-      "irc": false,
-      "sid": 1037030,
-      "c": "[]",
-      "atlr": "hidden",
-      "cv": "hidden",
-      "pdcv": "hidden",
-      "oa": "QEH\u003Cbr/\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 8T5"
     },
     {
       "rg": "ab4a8bde-b098-ee11-9929-000d3ae97b99",
@@ -7638,7 +7530,7 @@
       "rg": "96468bde-b098-ee11-9929-000d3ae97b99",
       "rl": "MacNearney, Paula C (7247)",
       "prl": "Family Medicine Register - General\u003Cbr/\u003EFamily Medicine",
-      "irc": true,
+      "irc": false,
       "sid": 1034907,
       "c": "[]",
       "atlr": "hidden",
@@ -7776,7 +7668,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "Halifax\u003Cbr/\u003E\u003Cbr/\u003EHalifax, Nova Scotia, Canada X0X 0X0"
+      "oa": ""
     },
     {
       "rg": "f1468bde-b098-ee11-9929-000d3ae97b99",
@@ -7809,7 +7701,7 @@
       "irc": false,
       "sid": 1035213,
       "c": "[]",
-      "atlr": "",
+      "atlr": "hidden",
       "cv": "hidden",
       "pdcv": "hidden",
       "oa": "Eastern Kings Health Centre\u003Cbr/\u003E17 Knights Ln.\u003C/br\u003E\u003Cbr/\u003ESouris, Prince Edward Island, Canada C0A 2B0\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-687-7033\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 902-687-7166"
@@ -7836,7 +7728,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "[NO ADDRESS]\u003Cbr/\u003E\u003Cbr/\u003ESaint John, New Brunswick, Canada E2L 4L2Hilyard Place, Building C\u003Cbr/\u003ESuite 160\u003C/br\u003E600 Main Street\u003C/br\u003E\u003Cbr/\u003ESaint John, New Brunswick, Canada E2K 1J5\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-648-7956"
+      "oa": "[NO ADDRESS]\u003Cbr/\u003E\u003Cbr/\u003ESaint John, New Brunswick, Canada E2L 4L2"
     },
     {
       "rg": "3ae619f9-8af4-ee11-992e-000d3ae97b99",
@@ -8394,7 +8286,7 @@
       "rg": "ba3c6155-d2d0-ee11-992d-000d3ae97b99",
       "rl": "Mehat, Pavandeep Anthony Singh (8763)",
       "prl": "Family Medicine Register - General\u003Cbr/\u003EFamily Medicine",
-      "irc": true,
+      "irc": false,
       "sid": 1034169,
       "c": "[]",
       "atlr": "hidden",
@@ -8425,18 +8317,6 @@
       "cv": "hidden",
       "pdcv": "hidden",
       "oa": "Nova Scotia Operational Stress Injury Clinic\u003Cbr/\u003ESuite 210-100 Eileen Stubbs Drive\u003C/br\u003E\u003Cbr/\u003EDartmouth, Nova Scotia, Canada B3B 1Y6\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-460-6225"
-    },
-    {
-      "rg": "17ab72ea-e305-f111-994f-000d3ae97b99",
-      "rl": "Mendez, Adrian (9424)",
-      "prl": "Specific Disciplines Register - General\u003Cbr/\u003EOtolaryngology-Head and Neck Surger",
-      "irc": false,
-      "sid": 1037474,
-      "c": "[]",
-      "atlr": "",
-      "cv": "hidden",
-      "pdcv": "hidden",
-      "oa": "Victoria General Hosptial\u003Cbr/\u003EQEII Health Sciences Center\u003C/br\u003E5820 University Avenue\u003C/br\u003E\u003Cbr/\u003EHalifax, Nova Scotia, Canada B3H 1Y9\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-473-2737"
     },
     {
       "rg": "9a4b8bde-b098-ee11-9929-000d3ae97b99",
@@ -9300,7 +9180,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "Saint John Regional Hospital\u003Cbr/\u003EPO Box 2100\u003C/br\u003E\u003Cbr/\u003ESaint John, New Brunswick, Canada E2L 4L2\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-649-2620"
+      "oa": ""
     },
     {
       "rg": "a9468bde-b098-ee11-9929-000d3ae97b99",
@@ -9408,7 +9288,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "75 McLeod Road\u003Cbr/\u003E\u003Cbr/\u003EBay du Vin, New Brunswick, Canada E1N 0A7\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-228-4931"
+      "oa": ""
     },
     {
       "rg": "af0f81b9-5b3a-f011-9941-000d3ae97b99",
@@ -9549,7 +9429,7 @@
       "irc": false,
       "sid": 1034160,
       "c": "[]",
-      "atlr": "",
+      "atlr": "hidden",
       "cv": "hidden",
       "pdcv": "hidden",
       "oa": "102 Parkside Drive\u003Cbr/\u003E24 Linden Avenue\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1E 1M6\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-566-3449\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 902-368-2394"
@@ -9648,7 +9528,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "Dr Georges L Dumont Hospital\u003Cbr/\u003E\u003Cbr/\u003EMoncton, New Brunswick, Canada E1C 2Z3\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-314-2909"
+      "oa": "29 Inkerman Drive\u003Cbr/\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 2P5\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-314-2909"
     },
     {
       "rg": "06498bde-b098-ee11-9929-000d3ae97b99",
@@ -9720,7 +9600,7 @@
       "atlr": "hidden",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "Queen Street Medical Centre, Gulf Shore Clinic and PCAC (locum in all locat\u003Cbr/\u003E418 Queen Street\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 4E7\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-894-7087\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 902-894-5012"
+      "oa": "Queen Street Medical Centre\u003Cbr/\u003E418 Queen Street\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 4E7\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-894-7087\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 902-894-5012"
     },
     {
       "rg": "30478bde-b098-ee11-9929-000d3ae97b99",
@@ -9771,30 +9651,6 @@
       "oa": "101 1209 6 ST SW\u003Cbr/\u003E\u003Cbr/\u003ECalgary, Alberta, Canada T2R 0Z5\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 602-546-9064"
     },
     {
-      "rg": "3a4a8bde-b098-ee11-9929-000d3ae97b99",
-      "rl": "Otusajo, Abayomi O (7443)",
-      "prl": "Specific Disciplines Register - General\u003Cbr/\u003EPsychiatry",
-      "irc": false,
-      "sid": 1037252,
-      "c": "[]",
-      "atlr": "",
-      "cv": "hidden",
-      "pdcv": "hidden",
-      "oa": "Dr. Everett Chalmers Hospital\u003Cbr/\u003EPO Box 9000\u003C/br\u003E\u003Cbr/\u003EFredericton, New Brunswick, Canada E3P 5N5\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-452-5400"
-    },
-    {
-      "rg": "eebb8918-d805-f111-994f-000d3ae97b99",
-      "rl": "Otusajo, Adejoke Olubunmi (9414)",
-      "prl": "Specific Disciplines Register - General\u003Cbr/\u003EPsychiatry",
-      "irc": false,
-      "sid": 1037452,
-      "c": "[]",
-      "atlr": "",
-      "cv": "hidden",
-      "pdcv": "hidden",
-      "oa": ""
-    },
-    {
       "rg": "07dd30a2-3dbb-f011-994a-000d3ae97b99",
       "rl": "Ouellet, Roxanne (9319)",
       "prl": "Family Medicine Register - General\u003Cbr/\u003EFamily Medicine",
@@ -9804,7 +9660,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "470 Ryan Street\u003Cbr/\u003E\u003Cbr/\u003EMoncton, New Brunswick, Canada E1G 2W3\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-588-4776"
+      "oa": ""
     },
     {
       "rg": "2dd7dcee-e0d4-ee11-992d-000d3ae97b99",
@@ -10188,7 +10044,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "DECRH\u003Cbr/\u003E700 PRIESTMAN ST\u003C/br\u003E\u003Cbr/\u003EFredericton, New Brunswick, Canada E3B 3B7\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-452-5400"
+      "oa": ""
     },
     {
       "rg": "6e468bde-b098-ee11-9929-000d3ae97b99",
@@ -10296,7 +10152,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "The Moncton Hospital\u003Cbr/\u003E135 MacBeath Avenue\u003C/br\u003E\u003Cbr/\u003EMoncton, New Brunswick, Canada E1C 6Z8\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-857-5111"
+      "oa": ""
     },
     {
       "rg": "e8498bde-b098-ee11-9929-000d3ae97b99",
@@ -10680,7 +10536,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "491 Main St\u003Cbr/\u003EPO Box 9\u003C/br\u003E\u003Cbr/\u003ELawrencetown, Nova Scotia, Canada B0S 1M0\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-309-6188"
+      "oa": "Windsor Collaborative Practice\u003Cbr/\u003E25 Wentworth Road\u003C/br\u003E\u003Cbr/\u003EWindsor, Nova Scotia, Canada B0N 2T0\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-798-1764"
     },
     {
       "rg": "45478bde-b098-ee11-9929-000d3ae97b99",
@@ -11029,18 +10885,6 @@
       "cv": "hidden",
       "pdcv": "hidden",
       "oa": "PCH\u003Cbr/\u003E65 Roy Boates Ave.\u003C/br\u003E\u003Cbr/\u003ESummerside, Prince Edward Island, Canada C1N 6M8\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-438-4200"
-    },
-    {
-      "rg": "be946bd5-0d01-f111-994f-000d3ae97b99",
-      "rl": "Salem, Maged M (9407)",
-      "prl": "Specific Disciplines Register - General\u003Cbr/\u003EMedical Oncology",
-      "irc": false,
-      "sid": 1037358,
-      "c": "[]",
-      "atlr": "",
-      "cv": "hidden",
-      "pdcv": "hidden",
-      "oa": "100 Arden Street\u003Cbr/\u003ESuite 304\u003C/br\u003E\u003Cbr/\u003EMoncton, New Brunswick, Canada E1C 4B7\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-870-2920"
     },
     {
       "rg": "388bc2f3-0eed-ee11-992e-000d3ae97b99",
@@ -11580,7 +11424,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "Upper River Valley Hospital\u003Cbr/\u003E11300 Route 130\u003C/br\u003E\u003Cbr/\u003EWaterville, New Brunswick, Canada E7P 0A4\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-375-5900"
+      "oa": ""
     },
     {
       "rg": "914a8bde-b098-ee11-9929-000d3ae97b99",
@@ -11760,7 +11604,7 @@
       "atlr": "hidden",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "Queen Elizabeth Hospital\u003Cbr/\u003E60 Riverside Dr.\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 8T5"
+      "oa": ""
     },
     {
       "rg": "85478bde-b098-ee11-9929-000d3ae97b99",
@@ -11868,7 +11712,7 @@
       "atlr": "hidden",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "HARBOURSIDE MEDICAL CENTER\u003Cbr/\u003E234 HEATHER MOYSE DRIVE\u003C/br\u003E\u003Cbr/\u003ESummerside, Prince Edward Island, Canada C1N 5R1\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-432-2600\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 902-432-2610"
+      "oa": "PCH\u003Cbr/\u003E65 Roy Boates Avenue\u003C/br\u003E\u003Cbr/\u003ESummerside, Prince Edward Island, Canada C1N 2A9"
     },
     {
       "rg": "4b583ee1-2eca-ef11-993c-000d3ae97b99",
@@ -11943,25 +11787,13 @@
       "oa": "Provincial Addictions\u003Cbr/\u003EMount Herbert, Box 2000\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 7N8\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-368-4070\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 902-569-0512"
     },
     {
-      "rg": "3dc12200-9806-f111-994f-000d3ae97b99",
-      "rl": "Stewart, Jacqueline A (9428)",
-      "prl": "Family Medicine Register - General\u003Cbr/\u003EFamily Medicine",
-      "irc": false,
-      "sid": 1037492,
-      "c": "[]",
-      "atlr": "",
-      "cv": "hidden",
-      "pdcv": "hidden",
-      "oa": ""
-    },
-    {
       "rg": "de4a8bde-b098-ee11-9929-000d3ae97b99",
       "rl": "Stewart, Mitchell K (7726)",
       "prl": "Family Medicine Register - General\u003Cbr/\u003EFamily Medicine",
       "irc": false,
       "sid": 1034483,
       "c": "[]",
-      "atlr": "",
+      "atlr": "hidden",
       "cv": "hidden",
       "pdcv": "hidden",
       "oa": "Parkdale Medical Centre, 1st Floor\u003Cbr/\u003E28 Linden Avenue\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 5Y9\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-368-1991\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 833-858-8858"
@@ -11988,7 +11820,7 @@
       "atlr": "hidden",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "Richmond Centre\u003Cbr/\u003ESuite 106 18 Queen St\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 4A1\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-368-4430\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 902-368-4427"
+      "oa": "Richmond Centre\u003Cbr/\u003E1 Rochford St, Box 2000\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 7N8\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-368-4430\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 902-368-4427"
     },
     {
       "rg": "b7468bde-b098-ee11-9929-000d3ae97b99",
@@ -12045,7 +11877,7 @@
       "irc": false,
       "sid": 1035103,
       "c": "[]",
-      "atlr": "",
+      "atlr": "hidden",
       "cv": "hidden",
       "pdcv": "hidden",
       "oa": "QEH\u003Cbr/\u003EPO Box 6600\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 8T5\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-894-2111"
@@ -12363,18 +12195,6 @@
       "oa": "QEH\u003Cbr/\u003EPO Box 6600\u003C/br\u003E\u003Cbr/\u003ECharlottetown, Prince Edward Island, Canada C1A 8T5\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-894-2111\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 902-894-2385"
     },
     {
-      "rg": "074a8bde-b098-ee11-9929-000d3ae97b99",
-      "rl": "Theriault, Peter S (7374)",
-      "prl": "Specific Disciplines Register - General\u003Cbr/\u003EPsychiatry,Forensic Psychiatry,Psychiatry",
-      "irc": false,
-      "sid": 1037486,
-      "c": "[]",
-      "atlr": "",
-      "cv": "hidden",
-      "pdcv": "hidden",
-      "oa": "88 Gloria McCluskey Drive\u003Cbr/\u003E\u003Cbr/\u003EDartmouth, Nova Scotia, Canada B3B 2B8\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-460-7300"
-    },
-    {
       "rg": "ade43914-5403-f011-993f-000d3ae97b99",
       "rl": "Thomas, Sara (9108)",
       "prl": "Family Medicine Register - General\u003Cbr/\u003EFamily Medicine",
@@ -12534,7 +12354,7 @@
       "rg": "83488bde-b098-ee11-9929-000d3ae97b99",
       "rl": "Tran, Teresa B (8245)",
       "prl": "Family Medicine Register - General\u003Cbr/\u003EFamily Medicine",
-      "irc": true,
+      "irc": false,
       "sid": 1034678,
       "c": "[]",
       "atlr": "hidden",
@@ -12582,7 +12402,7 @@
       "rg": "56aac2f1-19d0-ee11-992d-000d3ae97b99",
       "rl": "Trollip, Eudiet (8843)",
       "prl": "Family Medicine Register - General\u003Cbr/\u003EFamily Medicine",
-      "irc": true,
+      "irc": false,
       "sid": 1034147,
       "c": "[]",
       "atlr": "hidden",
@@ -13149,10 +12969,10 @@
       "irc": false,
       "sid": 1034320,
       "c": "[]",
-      "atlr": "",
+      "atlr": "hidden",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "Kensington Health Centre\u003Cbr/\u003E55 Victoria Street, E\u003C/br\u003EPO Box 70\u003C/br\u003E\u003Cbr/\u003EKensington, Prince Edward Island, Canada C0B 1M0\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-836-0180\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 902-836-0183"
+      "oa": "Kensington Health Centre\u003Cbr/\u003E55 Victoria Street, E\u003C/br\u003E\u003Cbr/\u003EKensington, Prince Edward Island, Canada C0B 1M0\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 902-836-0180\u003Cbr/\u003E\u003Cb\u003EFax:\u003C/b\u003E 902-836-0183"
     },
     {
       "rg": "204a8bde-b098-ee11-9929-000d3ae97b99",
@@ -13192,10 +13012,10 @@
     },
     {
       "rg": "eef4febe-a301-ef11-9930-000d3ae97b99",
-      "rl": "Widman, David S (T8840)",
-      "prl": "Specific Disciplines Register- Provisional\u003Cbr/\u003EDiagnostic Radiology",
+      "rl": "Widman, David S (8840)",
+      "prl": "Specific Disciplines Register - General\u003Cbr/\u003EDiagnostic Radiology",
       "irc": false,
-      "sid": 1037364,
+      "sid": 1034166,
       "c": "\u003Cul style=\u0022margin-left:12px;margin-bottom:0;\u0022\u003E\u003Cli\u003ERestriction\u003C/li\u003E\u003C/ul\u003E",
       "atlr": "hidden",
       "cv": "",
@@ -13647,18 +13467,6 @@
       "oa": "Canadian Health Solutions\u003Cbr/\u003E15 Market Square, Unit A\u003C/br\u003E\u003Cbr/\u003ESaint John, New Brunswick, Canada E2L 4L1\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-738-4322"
     },
     {
-      "rg": "203db492-e108-f111-9950-000d3ae97b99",
-      "rl": "Zahra, Bassam (9431)",
-      "prl": "Specific Disciplines Register - General\u003Cbr/\u003EOrthopedic Surgery,Orthopedic Surgery",
-      "irc": false,
-      "sid": 1037519,
-      "c": "[]",
-      "atlr": "",
-      "cv": "hidden",
-      "pdcv": "hidden",
-      "oa": ""
-    },
-    {
       "rg": "dc84d4dc-5beb-f011-994d-000d3ae97b99",
       "rl": "Zahra, Saly Adel Fathalla (9385)",
       "prl": "Specific Disciplines Register - General\u003Cbr/\u003EDiagnostic Radiology",
@@ -13668,7 +13476,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "The Moncton Hospital\u003Cbr/\u003E135 MacBeath Avenue\u003C/br\u003E\u003Cbr/\u003EMoncton, New Brunswick, Canada E1C 6Z8\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-857-5681"
+      "oa": ""
     },
     {
       "rg": "73468bde-b098-ee11-9929-000d3ae97b99",
@@ -13728,7 +13536,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "Edmundston Regional Hospital\u003Cbr/\u003E275 Hebert Boulevard\u003C/br\u003E\u003Cbr/\u003EEdmundston, New Brunswick, Canada E3V 4E4\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-739-2200"
+      "oa": ""
     },
     {
       "rg": "cf4b8bde-b098-ee11-9929-000d3ae97b99",
@@ -13788,7 +13596,7 @@
       "atlr": "",
       "cv": "hidden",
       "pdcv": "hidden",
-      "oa": "Edmundston Regional Hospital\u003Cbr/\u003E275 Hebert Boulevard\u003C/br\u003E\u003Cbr/\u003EEdmundston, New Brunswick, Canada E3V 4E4\u003Cbr/\u003E\u003Cbr/\u003E\u003Cb\u003EPhone:\u003C/b\u003E 506-739-2200"
+      "oa": ""
     }
   ]
 }
