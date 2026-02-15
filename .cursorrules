@@ -15,7 +15,34 @@
 ## Data Handling
 - The `data/` folder contains historical snapshots in JSON format.
 - `baseline.json` is the source of truth for the most recent state and should be updated after successful scrapes.
+- Dated files (e.g., `20250707.json`) are daily snapshots named `yyyyMMdd.json`.
 - Records are identified by the `rg` (Registrant GUID) property.
+
+## Data File Structure
+Each JSON file is the raw response from the CPSPEI Alinity public directory API with the following top-level shape:
+```json
+{
+  "EnableCaptcha": false,
+  "SearchCriteria": [],       // Array of search filter strings used for the query (e.g., "Region: Queens")
+  "Records": [ ... ]          // Array of registrant record objects
+}
+```
+
+### Record Fields
+Each object in the `Records` array represents a single physician/registrant:
+
+| Field  | Type    | Description |
+|--------|---------|-------------|
+| `rg`   | string  | **Registrant GUID** — unique identifier for the registrant. Used as the primary key for diffing records across snapshots. |
+| `rl`   | string  | **Registrant Label** — display name in the format `"LastName, FirstName MiddleInitial (RegistrationNumber)"`, e.g., `"Adams, Lenley S (7016)"`. |
+| `prl`  | string  | **Practice Register Label** — registration type and specialty/discipline(s), separated by `<br/>` HTML tags. E.g., `"Family Medicine Register - General<br/>Family Medicine"` or `"Specific Disciplines Register - General<br/>Internal Medicine,Internal Medicine"`. |
+| `irc`  | boolean | **Is Restricted/Conditional** — indicates whether the registrant has conditions or restrictions on their practice. |
+| `sid`  | number  | **System ID** — internal numeric identifier in the Alinity system. |
+| `c`    | string  | **Conditions** — JSON-encoded string of conditions/restrictions. Typically `"[]"` when none exist. |
+| `atlr` | string  | **Accepting Taking Patients Label/Restriction** — visibility flag. Values: `"hidden"` (not shown) or `""` (empty/visible). |
+| `cv`   | string  | **CV (Curriculum Vitae)** — visibility flag. Typically `"hidden"`. |
+| `pdcv` | string  | **Public Directory CV** — visibility flag. Typically `"hidden"`. |
+| `oa`   | string  | **Office Address** — HTML-formatted string containing practice name, street address, city, province, postal code, phone, and fax. Uses `<br/>`, `</br>`, and `<b>` HTML tags for formatting. |
 
 ## Architecture
 - The project is a Single Page Application (SPA).
