@@ -19,7 +19,7 @@ interface Doctor {
 const availableDates = ref<string[]>([])
 const selectedDate = ref('')
 const actualDate = ref('')
-const pickerDate = ref<Date | null>(null)
+const pickerDate = ref<string | null>(null)
 const doctors = ref<Doctor[]>([])
 const loading = ref(false)
 const status = ref('')
@@ -47,16 +47,9 @@ const filteredDoctors = computed(() => {
   )
 })
 
-function dateToString(d: Date): string {
-  const y = d.getFullYear().toString()
-  const m = (d.getMonth() + 1).toString().padStart(2, '0')
-  const day = d.getDate().toString().padStart(2, '0')
-  return `${y}${m}${day}`
-}
-
-function onDatePicked(date: Date | null) {
+function onDatePicked(date: string | null) {
   if (!date) return
-  selectedDate.value = dateToString(date)
+  selectedDate.value = date.replace(/-/g, '')
   loadDoctors()
 }
 
@@ -84,11 +77,7 @@ async function loadDates() {
   if (availableDates.value.length > 0) {
     selectedDate.value = availableDates.value[0]
     const d = availableDates.value[0]
-    pickerDate.value = new Date(
-      parseInt(d.substring(0, 4)),
-      parseInt(d.substring(4, 6)) - 1,
-      parseInt(d.substring(6, 8))
-    )
+    pickerDate.value = `${d.substring(0, 4)}-${d.substring(4, 6)}-${d.substring(6, 8)}`
     await loadDoctors()
   }
 }
@@ -139,7 +128,8 @@ onMounted(loadDates)
           v-model="pickerDate"
           :dark="isDark"
           :highlight="highlightedDates"
-          :enable-time-picker="false"
+          :time-config="{ enableTimePicker: false }"
+          model-type="yyyy-MM-dd"
           format="yyyy-MM-dd"
           auto-apply
           placeholder="Select a date"
