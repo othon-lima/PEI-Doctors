@@ -161,17 +161,19 @@ onMounted(loadDates)
     <header>
       <h1>PEI Doctors Monitor</h1>
       <div class="controls">
-        <VueDatePicker
-          v-model="pickerDate"
-          :dark="isDark"
-          :highlight="highlightedDates"
-          :time-config="{ enableTimePicker: false }"
-          model-type="yyyy-MM-dd"
-          format="yyyy-MM-dd"
-          auto-apply
-          placeholder="Select a date"
-          @update:model-value="onDatePicked"
-        />
+        <div class="date-picker-wrapper">
+          <VueDatePicker
+            v-model="pickerDate"
+            :dark="isDark"
+            :highlight="highlightedDates"
+            :time-config="{ enableTimePicker: false }"
+            model-type="yyyy-MM-dd"
+            format="yyyy-MM-dd"
+            auto-apply
+            placeholder="Select a date"
+            @update:model-value="onDatePicked"
+          />
+        </div>
         <input
           v-model="searchQuery"
           type="text"
@@ -246,7 +248,12 @@ header h1 {
   display: flex;
   align-items: center;
   gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+}
+
+.date-picker-wrapper {
+  width: 180px;
+  flex-shrink: 0;
 }
 
 .search-input {
@@ -256,7 +263,8 @@ header h1 {
   border: 1px solid #555;
   background: inherit;
   color: inherit;
-  min-width: 200px;
+  width: 200px;
+  flex-shrink: 0;
 }
 
 .region-filter {
@@ -266,6 +274,8 @@ header h1 {
   border: 1px solid #555;
   background: inherit;
   color: inherit;
+  width: 150px;
+  flex-shrink: 0;
 }
 
 .region-filter option {
@@ -349,6 +359,41 @@ tr.restricted {
   text-align: center;
   padding: 3rem;
   opacity: 0.6;
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 767px) {
+  .controls {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .date-picker-wrapper,
+  .search-input {
+    width: 100%;
+    flex-shrink: 1;
+  }
+
+  .region-filter {
+    width: calc(50% - 0.375rem);
+    flex-shrink: 1;
+  }
+
+  .scrape-btn {
+    width: calc(50% - 0.375rem);
+    margin-left: 0;
+  }
+}
+
+/* Tablet adjustment - tighter spacing */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .controls {
+    gap: 0.75rem;
+  }
+
+  .search-input {
+    width: 180px;
+  }
 }
 
 @media (prefers-color-scheme: light) {
