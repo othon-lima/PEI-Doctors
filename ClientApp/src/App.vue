@@ -24,6 +24,37 @@ const doctors = ref<Doctor[]>([])
 const loading = ref(false)
 const status = ref('')
 const searchQuery = ref('')
+const selectedRegion = ref('')
+
+const PEI_COUNTY_MAP: Record<string, string> = {
+  'Charlottetown': 'Queens',
+  'Stratford': 'Queens',
+  'Hunter River': 'Queens',
+  'Crapaud': 'Queens',
+  'Cornwall': 'Queens',
+  'Mount Herbert': 'Queens',
+  'North Rustico': 'Queens',
+  'Medical Education': 'Queens',
+  'Montague': 'Kings',
+  'Souris': 'Kings',
+  'Murray River': 'Kings',
+  'Summerside': 'Prince',
+  'Alberton': 'Prince',
+  "O'Leary": 'Prince',
+  'Kensington': 'Prince',
+  'Tignish': 'Prince',
+  'Tyne Valley': 'Prince',
+}
+
+function getCounty(oa: string): string {
+  if (!oa.includes('Prince Edward Island')) return 'Outside PEI'
+  const m = oa.match(/(?:<br\/?>|<\/br>)\s*([^<,]+),\s*Prince Edward Island/)
+  if (m) {
+    const city = m[1].trim()
+    if (PEI_COUNTY_MAP[city]) return PEI_COUNTY_MAP[city]
+  }
+  return 'Queens'
+}
 const isDark = ref(window.matchMedia('(prefers-color-scheme: dark)').matches)
 
 window.matchMedia('(prefers-color-scheme: dark)')
@@ -38,13 +69,19 @@ const highlightedDates = computed(() => ({
 }))
 
 const filteredDoctors = computed(() => {
-  if (!searchQuery.value) return doctors.value
-  const q = searchQuery.value.toLowerCase()
-  return doctors.value.filter(d =>
-    d.rl.toLowerCase().includes(q) ||
-    d.prl.toLowerCase().includes(q) ||
-    d.oa.toLowerCase().includes(q)
-  )
+  let result = doctors.value
+  if (selectedRegion.value) {
+    result = result.filter(d => getCounty(d.oa) === selectedRegion.value)
+  }
+  if (searchQuery.value) {
+    const q = searchQuery.value.toLowerCase()
+    result = result.filter(d =>
+      d.rl.toLowerCase().includes(q) ||
+      d.prl.toLowerCase().includes(q) ||
+      d.oa.toLowerCase().includes(q)
+    )
+  }
+  return result
 })
 
 function onDatePicked(date: string | null) {
@@ -141,6 +178,13 @@ onMounted(loadDates)
           placeholder="Search doctors..."
           class="search-input"
         />
+        <select v-model="selectedRegion" class="region-filter">
+          <option value="">All Regions</option>
+          <option value="Queens">Queens</option>
+          <option value="Kings">Kings</option>
+          <option value="Prince">Prince</option>
+          <option value="Outside PEI">Outside PEI</option>
+        </select>
         <button @click="triggerScrape" class="scrape-btn">Scrape Now</button>
       </div>
     </header>
@@ -213,6 +257,20 @@ header h1 {
   background: inherit;
   color: inherit;
   min-width: 200px;
+}
+
+.region-filter {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background: inherit;
+  color: inherit;
+}
+
+.region-filter option {
+  background: #1a1a2e;
+  color: #e0e0e0;
 }
 
 .scrape-btn {
@@ -307,8 +365,13 @@ tr.restricted {
   tbody td {
     border-bottom-color: #eee;
   }
-  .search-input {
+  .search-input,
+  .region-filter {
     border-color: #ccc;
+  }
+  .region-filter option {
+    background: #fff;
+    color: #213547;
   }
 }
 </style>
