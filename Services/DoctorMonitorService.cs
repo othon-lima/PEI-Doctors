@@ -162,9 +162,122 @@ public class DoctorMonitorService
         return (changesFound, report.ToString());
     }
 
+    public CompareResult GetStructuredDiffs(string oldJson, string newJson)
+    {
+        var result = new CompareResult();
+        using var oldDoc = JsonDocument.Parse(oldJson);
+        using var newDoc = JsonDocument.Parse(newJson);
+
+        var oldRecs = oldDoc.RootElement.GetProperty("Records");
+        var newRecs = newDoc.RootElement.GetProperty("Records");
+
+        var oldMap = new Dictionary<string, JsonElement>();
+        foreach (var rec in oldRecs.EnumerateArray())
+            oldMap[rec.GetProperty("rg").GetString() ?? ""] = rec;
+
+        var newMap = new Dictionary<string, JsonElement>();
+        foreach (var rec in newRecs.EnumerateArray())
+            newMap[rec.GetProperty("rg").GetString() ?? ""] = rec;
+
+        var allIds = new SortedSet<string>(oldMap.Keys);
+        allIds.UnionWith(newMap.Keys);
+
+        foreach (var id in allIds)
+        {
+            var inOld = oldMap.TryGetValue(id, out var oldRec);
+            var inNew = newMap.TryGetValue(id, out var newRec);
+
+            if (!inOld)
+            {
+                result.Added.Add(ToDoctorRecord(newRec));
+                continue;
+            }
+            if (!inNew)
+            {
+                result.Removed.Add(ToDoctorRecord(oldRec));
+                continue;
+            }
+
+            var fields = new List<FieldDiff>();
+            CompareField(fields, "Name", oldRec, newRec, "rl");
+            CompareField(fields, "Specialty", oldRec, newRec, "prl");
+            CompareField(fields, "Office Address", oldRec, newRec, "oa");
+            CompareBoolField(fields, "Restricted", oldRec, newRec, "irc");
+            CompareField(fields, "Conditions", oldRec, newRec, "c");
+            CompareField(fields, "Accepting Patients", oldRec, newRec, "atlr");
+
+            if (fields.Count > 0)
+            {
+                result.Changed.Add(new ChangedDoctor
+                {
+                    Rg = id,
+                    Rl = newRec.GetProperty("rl").GetString() ?? "",
+                    Fields = fields
+                });
+            }
+        }
+
+        return result;
+    }
+
+    private static DoctorRecord ToDoctorRecord(JsonElement el) => new()
+    {
+        Rg = el.GetProperty("rg").GetString() ?? "",
+        Rl = el.GetProperty("rl").GetString() ?? "",
+        Prl = el.GetProperty("prl").GetString() ?? "",
+        Irc = el.GetProperty("irc").GetBoolean(),
+        Oa = el.GetProperty("oa").GetString() ?? ""
+    };
+
+    private static void CompareField(List<FieldDiff> fields, string label, JsonElement oldRec, JsonElement newRec, string prop)
+    {
+        var oldVal = oldRec.GetProperty(prop).GetString() ?? "";
+        var newVal = newRec.GetProperty(prop).GetString() ?? "";
+        if (oldVal != newVal)
+            fields.Add(new FieldDiff { Field = label, OldValue = oldVal, NewValue = newVal });
+    }
+
+    private static void CompareBoolField(List<FieldDiff> fields, string label, JsonElement oldRec, JsonElement newRec, string prop)
+    {
+        var oldVal = oldRec.GetProperty(prop).GetBoolean();
+        var newVal = newRec.GetProperty(prop).GetBoolean();
+        if (oldVal != newVal)
+            fields.Add(new FieldDiff { Field = label, OldValue = oldVal.ToString(), NewValue = newVal.ToString() });
+    }
+
     public string GetProjectRoot([CallerFilePath] string callerPath = "")
     {
         string serviceDir = Path.GetDirectoryName(callerPath) ?? Directory.GetCurrentDirectory();
         return Path.GetDirectoryName(serviceDir) ?? serviceDir;
     }
+}
+
+public class CompareResult
+{
+    public List<DoctorRecord> Added { get; set; } = [];
+    public List<DoctorRecord> Removed { get; set; } = [];
+    public List<ChangedDoctor> Changed { get; set; } = [];
+}
+
+public class DoctorRecord
+{
+    public string Rg { get; set; } = "";
+    public string Rl { get; set; } = "";
+    public string Prl { get; set; } = "";
+    public bool Irc { get; set; }
+    public string Oa { get; set; } = "";
+}
+
+public class ChangedDoctor
+{
+    public string Rg { get; set; } = "";
+    public string Rl { get; set; } = "";
+    public List<FieldDiff> Fields { get; set; } = [];
+}
+
+public class FieldDiff
+{
+    public string Field { get; set; } = "";
+    public string OldValue { get; set; } = "";
+    public string NewValue { get; set; } = "";
 }

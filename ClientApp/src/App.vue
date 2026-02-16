@@ -16,6 +16,24 @@ interface Doctor {
   oa: string
 }
 
+interface FieldDiff {
+  field: string
+  oldValue: string
+  newValue: string
+}
+
+interface ChangedDoctor {
+  rg: string
+  rl: string
+  fields: FieldDiff[]
+}
+
+interface CompareResult {
+  added: Doctor[]
+  removed: Doctor[]
+  changed: ChangedDoctor[]
+}
+
 const availableDates = ref<string[]>([])
 const selectedDate = ref('')
 const actualDate = ref('')
@@ -25,6 +43,16 @@ const loading = ref(false)
 const status = ref('')
 const searchQuery = ref('')
 const selectedRegion = ref('')
+
+// Compare mode
+const compareMode = ref(false)
+const compareDate1 = ref<string | null>(null)
+const compareDate2 = ref<string | null>(null)
+const compareResult = ref<CompareResult | null>(null)
+const compareFromDate = ref('')
+const compareToDate = ref('')
+const compareLoading = ref(false)
+const compareError = ref('')
 
 const PEI_COUNTY_MAP: Record<string, string> = {
   'Charlottetown': 'Queens',
@@ -153,6 +181,31 @@ async function triggerScrape() {
   }
 }
 
+function formatDate(d: string) {
+  return `${d.substring(0, 4)}-${d.substring(4, 6)}-${d.substring(6, 8)}`
+}
+
+async function onCompare() {
+  if (!compareDate1.value || !compareDate2.value) return
+  const d1 = compareDate1.value.replace(/-/g, '')
+  const d2 = compareDate2.value.replace(/-/g, '')
+  compareLoading.value = true
+  compareError.value = ''
+  compareResult.value = null
+  try {
+    const response = await fetch(`/api/doctors/compare/${d1}/${d2}`)
+    if (!response.ok) throw new Error('Failed to load comparison')
+    const data = await response.json()
+    compareFromDate.value = data.fromDate
+    compareToDate.value = data.toDate
+    compareResult.value = data.result
+  } catch (error) {
+    compareError.value = 'Error loading comparison: ' + error
+  } finally {
+    compareLoading.value = false
+  }
+}
+
 onMounted(loadDates)
 </script>
 
@@ -161,69 +214,202 @@ onMounted(loadDates)
     <header>
       <h1>PEI Doctors Monitor</h1>
       <div class="controls">
-        <div class="date-picker-wrapper">
-          <VueDatePicker
-            v-model="pickerDate"
-            :dark="isDark"
-            :highlight="highlightedDates"
-            :time-config="{ enableTimePicker: false }"
-            model-type="yyyy-MM-dd"
-            format="yyyy-MM-dd"
-            auto-apply
-            placeholder="Select a date"
-            @update:model-value="onDatePicked"
-          />
+        <div class="mode-toggle">
+          <button :class="{ active: !compareMode }" @click="compareMode = false">View</button>
+          <button :class="{ active: compareMode }" @click="compareMode = true">Compare</button>
         </div>
-        <input
-          v-model="searchQuery"
-          type="text"
-          placeholder="Search doctors..."
-          class="search-input"
-        />
-        <select v-model="selectedRegion" class="region-filter">
-          <option value="">All Regions</option>
-          <option value="Queens">Queens</option>
-          <option value="Kings">Kings</option>
-          <option value="Prince">Prince</option>
-          <option value="Outside PEI">Outside PEI</option>
-        </select>
-        <button @click="triggerScrape" class="scrape-btn">Scrape Now</button>
+        <template v-if="!compareMode">
+          <div class="date-picker-wrapper">
+            <VueDatePicker
+              v-model="pickerDate"
+              :dark="isDark"
+              :highlight="highlightedDates"
+              :time-config="{ enableTimePicker: false }"
+              model-type="yyyy-MM-dd"
+              format="yyyy-MM-dd"
+              auto-apply
+              placeholder="Select a date"
+              @update:model-value="onDatePicked"
+            />
+          </div>
+          <input
+            v-model="searchQuery"
+            type="text"
+            placeholder="Search doctors..."
+            class="search-input"
+          />
+          <select v-model="selectedRegion" class="region-filter">
+            <option value="">All Regions</option>
+            <option value="Queens">Queens</option>
+            <option value="Kings">Kings</option>
+            <option value="Prince">Prince</option>
+            <option value="Outside PEI">Outside PEI</option>
+          </select>
+          <button @click="triggerScrape" class="scrape-btn">Scrape Now</button>
+        </template>
+        <template v-else>
+          <div class="date-picker-wrapper">
+            <VueDatePicker
+              v-model="compareDate1"
+              :dark="isDark"
+              :highlight="highlightedDates"
+              :time-config="{ enableTimePicker: false }"
+              model-type="yyyy-MM-dd"
+              format="yyyy-MM-dd"
+              auto-apply
+              placeholder="From date"
+              @update:model-value="onCompare"
+            />
+          </div>
+          <div class="date-picker-wrapper">
+            <VueDatePicker
+              v-model="compareDate2"
+              :dark="isDark"
+              :highlight="highlightedDates"
+              :time-config="{ enableTimePicker: false }"
+              model-type="yyyy-MM-dd"
+              format="yyyy-MM-dd"
+              auto-apply
+              placeholder="To date"
+              @update:model-value="onCompare"
+            />
+          </div>
+        </template>
       </div>
     </header>
 
-    <div v-if="status" class="status-bar" :class="{ warning: actualDate !== selectedDate }">
-      {{ status }}
-    </div>
+    <!-- Normal view -->
+    <template v-if="!compareMode">
+      <div v-if="status" class="status-bar" :class="{ warning: actualDate !== selectedDate }">
+        {{ status }}
+      </div>
 
-    <div v-if="loading" class="loading">Loading...</div>
+      <div v-if="loading" class="loading">Loading...</div>
 
-    <div v-else-if="doctors.length" class="results">
-      <p class="count">{{ filteredDoctors.length }} doctor{{ filteredDoctors.length !== 1 ? 's' : '' }} found</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Reg #</th>
-            <th>Specialty</th>
-            <th>Office Address</th>
-            <th>Restricted</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="doc in filteredDoctors" :key="doc.rg" :class="{ restricted: doc.irc }">
-            <td>{{ parseName(doc.rl).name }}</td>
-            <td class="reg-num">{{ parseName(doc.rl).regNumber }}</td>
-            <td>{{ parseSpecialty(doc.prl) }}</td>
-            <td class="address">{{ parseAddress(doc.oa) }}</td>
-            <td class="center">{{ doc.irc ? 'Yes' : '' }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      <div v-else-if="doctors.length" class="results">
+        <p class="count">{{ filteredDoctors.length }} doctor{{ filteredDoctors.length !== 1 ? 's' : '' }} found</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Reg #</th>
+              <th>Specialty</th>
+              <th>Office Address</th>
+              <th>Restricted</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="doc in filteredDoctors" :key="doc.rg" :class="{ restricted: doc.irc }">
+              <td>{{ parseName(doc.rl).name }}</td>
+              <td class="reg-num">{{ parseName(doc.rl).regNumber }}</td>
+              <td>{{ parseSpecialty(doc.prl) }}</td>
+              <td class="address">{{ parseAddress(doc.oa) }}</td>
+              <td class="center">{{ doc.irc ? 'Yes' : '' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-    <div v-else-if="!loading" class="empty">
-      No doctors data available.
-    </div>
+      <div v-else-if="!loading" class="empty">
+        No doctors data available.
+      </div>
+    </template>
+
+    <!-- Compare view -->
+    <template v-else>
+      <div v-if="compareFromDate && compareToDate && (compareFromDate !== compareDate1?.replace(/-/g, '') || compareToDate !== compareDate2?.replace(/-/g, ''))" class="status-bar warning">
+        Showing data from {{ formatDate(compareFromDate) }} to {{ formatDate(compareToDate) }} (closest available dates).
+      </div>
+
+      <div v-if="compareLoading" class="loading">Comparing...</div>
+
+      <div v-else-if="compareError" class="status-bar warning">{{ compareError }}</div>
+
+      <div v-else-if="compareResult" class="compare-results">
+        <p class="count">
+          {{ compareResult.added.length }} added, {{ compareResult.removed.length }} removed, {{ compareResult.changed.length }} changed
+        </p>
+
+        <section v-if="compareResult.added.length" class="diff-section">
+          <h3>Added ({{ compareResult.added.length }})</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Reg #</th>
+                <th>Specialty</th>
+                <th>Office Address</th>
+                <th>Restricted</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="doc in compareResult.added" :key="doc.rg" class="diff-added">
+                <td>{{ parseName(doc.rl).name }}</td>
+                <td class="reg-num">{{ parseName(doc.rl).regNumber }}</td>
+                <td>{{ parseSpecialty(doc.prl) }}</td>
+                <td class="address">{{ parseAddress(doc.oa) }}</td>
+                <td class="center">{{ doc.irc ? 'Yes' : '' }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section v-if="compareResult.removed.length" class="diff-section">
+          <h3>Removed ({{ compareResult.removed.length }})</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Reg #</th>
+                <th>Specialty</th>
+                <th>Office Address</th>
+                <th>Restricted</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="doc in compareResult.removed" :key="doc.rg" class="diff-removed">
+                <td>{{ parseName(doc.rl).name }}</td>
+                <td class="reg-num">{{ parseName(doc.rl).regNumber }}</td>
+                <td>{{ parseSpecialty(doc.prl) }}</td>
+                <td class="address">{{ parseAddress(doc.oa) }}</td>
+                <td class="center">{{ doc.irc ? 'Yes' : '' }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section v-if="compareResult.changed.length" class="diff-section">
+          <h3>Changed ({{ compareResult.changed.length }})</h3>
+          <div v-for="doc in compareResult.changed" :key="doc.rg" class="changed-card">
+            <h4>{{ parseName(doc.rl).name }}</h4>
+            <table class="field-diff-table">
+              <thead>
+                <tr>
+                  <th>Field</th>
+                  <th>Old Value</th>
+                  <th>New Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(diff, i) in doc.fields" :key="i">
+                  <td class="field-name">{{ diff.field }}</td>
+                  <td class="old-value">{{ diff.field === 'Office Address' ? parseAddress(diff.oldValue) : diff.oldValue }}</td>
+                  <td class="new-value">{{ diff.field === 'Office Address' ? parseAddress(diff.newValue) : diff.newValue }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <div v-if="!compareResult.added.length && !compareResult.removed.length && !compareResult.changed.length" class="empty">
+          No differences found between these dates.
+        </div>
+      </div>
+
+      <div v-else class="empty">
+        Select two dates to compare.
+      </div>
+    </template>
   </div>
 </template>
 
@@ -361,6 +547,78 @@ tr.restricted {
   opacity: 0.6;
 }
 
+/* Mode toggle */
+.mode-toggle {
+  display: flex;
+  border: 1px solid #555;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.mode-toggle button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.mode-toggle button.active {
+  background: rgba(100, 108, 255, 0.2);
+}
+
+/* Diff sections */
+.diff-section {
+  margin-bottom: 2rem;
+}
+
+.diff-section h3 {
+  font-size: 1.1rem;
+  margin: 1rem 0 0.5rem;
+}
+
+tr.diff-added {
+  background: rgba(80, 200, 80, 0.1);
+}
+
+tr.diff-removed {
+  background: rgba(255, 80, 80, 0.1);
+}
+
+/* Changed cards */
+.changed-card {
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.changed-card h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+}
+
+.field-diff-table {
+  font-size: 0.85rem;
+}
+
+.field-name {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.old-value {
+  color: #ff6b6b;
+  white-space: pre-line;
+}
+
+.new-value {
+  color: #69db7c;
+  white-space: pre-line;
+}
+
 /* Responsive layout for mobile */
 @media (max-width: 767px) {
   .controls {
@@ -382,6 +640,14 @@ tr.restricted {
   .scrape-btn {
     width: calc(50% - 0.375rem);
     margin-left: 0;
+  }
+
+  .mode-toggle {
+    width: 100%;
+  }
+
+  .mode-toggle button {
+    flex: 1;
   }
 }
 
@@ -417,6 +683,18 @@ tr.restricted {
   .region-filter option {
     background: #fff;
     color: #213547;
+  }
+  .mode-toggle {
+    border-color: #ccc;
+  }
+  .changed-card {
+    border-color: #ddd;
+  }
+  .old-value {
+    color: #c92a2a;
+  }
+  .new-value {
+    color: #2b8a3e;
   }
 }
 </style>

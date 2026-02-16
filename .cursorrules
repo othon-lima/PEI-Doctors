@@ -57,6 +57,7 @@ Each object in the `Records` array represents a single physician/registrant:
 - `GET /api/doctors/baseline` — returns the current baseline JSON.
 - `GET /api/doctors/dates` — returns a list of available snapshot dates (descending, `yyyyMMdd` format).
 - `GET /api/doctors/data/{date}` — returns doctor records for a given date. Falls back to the closest previous snapshot if the exact date doesn't exist. Response includes `actualDate` and `data` fields.
+- `GET /api/doctors/compare/{date1}/{date2}` — returns structured JSON diff between two snapshot dates. Response includes `fromDate`, `toDate`, and `result` (with `added`, `removed`, `changed` arrays). Changed entries include field-level diffs. Uses the same date fallback logic as `/data/{date}`.
 
 ## Frontend UI
 - `App.vue` is the main (and only) view. It contains:
@@ -66,6 +67,7 @@ Each object in the `Records` array represents a single physician/registrant:
   - A doctors table showing Name, Reg #, Specialty, Office Address, and Restricted status.
   - A "Scrape Now" button to trigger a new data scrape.
   - A status bar that shows fallback warnings when the selected date has no exact data file.
+  - A "Compare" mode toggle that switches to a date comparison view with two date pickers, showing added/removed/changed doctors between two selected snapshots. Changed doctors display field-level diffs (old value vs new value).
 - Dark/light mode follows the system `prefers-color-scheme` setting.
 
 ## Maintenance of this file
