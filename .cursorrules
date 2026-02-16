@@ -4,6 +4,7 @@
 - Backend: ASP.NET Core 8 Web API
 - Frontend: Vue 3 + TypeScript + Vite (located in `ClientApp/`)
 - Libraries: DiffPlex, System.Text.Json, Microsoft.AspNetCore.SpaProxy
+- Frontend Libraries: @vuepic/vue-datepicker (calendar date picker with dark mode support)
 
 ## Coding Standards
 - Use modern C# features (file-scoped namespaces, primary constructors where applicable).
@@ -50,6 +51,21 @@ Each object in the `Records` array represents a single physician/registrant:
 - In production, the backend serves the pre-built static files from `ClientApp/dist`.
 - Business logic for monitoring and scraping is located in `Services/DoctorMonitorService.cs`.
 - API endpoints are located in `Controllers/`.
+
+## API Endpoints
+- `POST /api/doctors/scrape` — triggers a new scrape of the CPSPEI directory.
+- `GET /api/doctors/baseline` — returns the current baseline JSON.
+- `GET /api/doctors/dates` — returns a list of available snapshot dates (descending, `yyyyMMdd` format).
+- `GET /api/doctors/data/{date}` — returns doctor records for a given date. Falls back to the closest previous snapshot if the exact date doesn't exist. Response includes `actualDate` and `data` fields.
+
+## Frontend UI
+- `App.vue` is the main (and only) view. It contains:
+  - A VueDatePicker calendar for selecting snapshot dates, with available dates highlighted.
+  - A search input to filter doctors by name, specialty, or address.
+  - A doctors table showing Name, Reg #, Specialty, Office Address, and Restricted status.
+  - A "Scrape Now" button to trigger a new data scrape.
+  - A status bar that shows fallback warnings when the selected date has no exact data file.
+- Dark/light mode follows the system `prefers-color-scheme` setting.
 
 ## Maintenance of this file
 - **CRITICAL:** Whenever significant architectural changes, new dependencies, or new coding patterns are introduced to the codebase, this `.cursorrules` file MUST be updated to reflect the new state.
