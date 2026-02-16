@@ -64,6 +64,7 @@ Each object in the `Records` array represents a single physician/registrant:
   - A VueDatePicker calendar for selecting snapshot dates, with available dates highlighted.
   - A search input to filter doctors by name, specialty, or address.
   - A region dropdown to filter by PEI county (Queens, Kings, Prince) or "Outside PEI". Uses a city-to-county mapping parsed from the `oa` field.
+  - An "accepting new patients" dropdown to filter by whether doctors are accepting new patients (based on the `atlr` field: empty string = accepting, "hidden" = not accepting).
   - A doctors table showing Name, Reg #, Specialty, Office Address, and Restricted status.
   - A "Scrape Now" button to trigger a new data scrape.
   - A status bar that shows fallback warnings when the selected date has no exact data file.

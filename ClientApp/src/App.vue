@@ -43,6 +43,7 @@ const loading = ref(false)
 const status = ref('')
 const searchQuery = ref('')
 const selectedRegion = ref('')
+const acceptingPatientsFilter = ref('')
 
 // Compare mode
 const compareMode = ref(false)
@@ -100,6 +101,11 @@ const filteredDoctors = computed(() => {
   let result = doctors.value
   if (selectedRegion.value) {
     result = result.filter(d => getCounty(d.oa) === selectedRegion.value)
+  }
+  if (acceptingPatientsFilter.value === 'accepting') {
+    result = result.filter(d => d.atlr === '')
+  } else if (acceptingPatientsFilter.value === 'not-accepting') {
+    result = result.filter(d => d.atlr === 'hidden')
   }
   if (searchQuery.value) {
     const q = searchQuery.value.toLowerCase()
@@ -244,6 +250,11 @@ onMounted(loadDates)
             <option value="Kings">Kings</option>
             <option value="Prince">Prince</option>
             <option value="Outside PEI">Outside PEI</option>
+          </select>
+          <select v-model="acceptingPatientsFilter" class="accepting-filter">
+            <option value="">All Doctors</option>
+            <option value="accepting">Accepting New Patients</option>
+            <option value="not-accepting">Not Accepting New Patients</option>
           </select>
           <button @click="triggerScrape" class="scrape-btn">Scrape Now</button>
         </template>
@@ -469,6 +480,22 @@ header h1 {
   color: #e0e0e0;
 }
 
+.accepting-filter {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background: inherit;
+  color: inherit;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.accepting-filter option {
+  background: #1a1a2e;
+  color: #e0e0e0;
+}
+
 .scrape-btn {
   margin-left: auto;
 }
@@ -637,6 +664,11 @@ tr.diff-removed {
     flex-shrink: 1;
   }
 
+  .accepting-filter {
+    width: calc(50% - 0.375rem);
+    flex-shrink: 1;
+  }
+
   .scrape-btn {
     width: calc(50% - 0.375rem);
     margin-left: 0;
@@ -677,10 +709,15 @@ tr.diff-removed {
     border-bottom-color: #eee;
   }
   .search-input,
-  .region-filter {
+  .region-filter,
+  .accepting-filter {
     border-color: #ccc;
   }
   .region-filter option {
+    background: #fff;
+    color: #213547;
+  }
+  .accepting-filter option {
     background: #fff;
     color: #213547;
   }
